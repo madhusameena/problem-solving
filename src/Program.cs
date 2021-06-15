@@ -14,7 +14,7 @@ namespace CSharpProblemSolving
 	{
 		static void Main(string[] args)
 		{
-			RemoveCompleteDuplicateElements.Samples();
+			RotateList.Samples();
 		}
 
 		public static bool IsLetterOrSeparator(char c) =>
