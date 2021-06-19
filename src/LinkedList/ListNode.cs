@@ -42,4 +42,26 @@ namespace CSharpProblemSolving.LinkedList
 			}
 		}
 	}
+	public static class ListNodeHelper
+	{
+		public static void Samples()
+		{
+			int[] list = { 1, 2, 3, 4, 5 };
+			var node = GetListNode(list);
+			node.PrintChain();
+		}
+
+		public static ListNode GetListNode(int[] nums)
+		{
+			ListNode head = new ListNode(-1);
+			ListNode node = head;
+			foreach (var num in nums)
+			{
+				node.next = new ListNode(num);
+				node = node.next;
+			}
+
+			return head.next;
+		}
+	}
 }
