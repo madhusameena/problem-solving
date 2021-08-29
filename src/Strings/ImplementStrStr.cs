@@ -2,6 +2,7 @@
 
 namespace CSharpProblemSolving.Strings
 {
+	// https://www.interviewbit.com/problems/implement-strstr/
 	public static class ImplementStrStr
 	{
 		public static void Samples()
@@ -34,7 +35,8 @@ namespace CSharpProblemSolving.Strings
 					started = true;
 					index++;
 					// index = idx;
-				}else  if (started)
+				}
+				else  if (started)
 				{
 					if (A[idx].ToString().ToLower() == B[index].ToString().ToLower())
 					{

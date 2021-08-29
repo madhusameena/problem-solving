@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CSharpProblemSolving.Strings
 {
+	// https://www.interviewbit.com/problems/justified-text/
 	public static class JustifiedText
 	{
 		public static void solve()
@@ -67,6 +69,45 @@ namespace CSharpProblemSolving.Strings
 			{
 				Console.WriteLine($"`{s}`");
 			}
+		}
+		public static List<string> fullJustifySol(List<string> words, int maxWidth) {
+			var res = new List< string>();
+			var oneline = new List< string>();
+			var count = 0;
+			for (int i = 0; i < words.Count; i++)             
+			{                 
+				if (count + oneline.Count + words[i].Length > maxWidth)
+				{
+					var stringbuilder = new StringBuilder();
+					var leftSpaces = maxWidth - count;
+					for (int j = 0; j < oneline.Count; j++)                     
+					{                         
+						stringbuilder.Append(oneline[j]);                         
+						if (j == oneline.Count - 1)                         
+						{                             
+							continue;                         
+						}                         
+						var spaceToAdd = leftSpaces / (oneline.Count - 1) + 
+						                 (leftSpaces % (oneline.Count - 1) > j ? 1 : 0);
+						stringbuilder.Append(' ', spaceToAdd);
+					}
+
+					res.Add(stringbuilder.ToString().PadRight(maxWidth));
+
+					count = 0;
+					oneline.Clear();
+				}
+
+				count += words[i].Length;
+				oneline.Add(words[i]);
+			}
+
+			if (oneline.Any())
+			{
+				res.Add(string.Join(" ", oneline.ToArray()).PadRight(maxWidth));
+			}
+
+			return res;
 		}
 
 		public static List<string> fullJustify(List<string> A, int B)

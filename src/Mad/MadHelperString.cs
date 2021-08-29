@@ -85,7 +85,7 @@ namespace CSharpProblemSolving.Mad
 
 			return -1;
 		}
-		//https://www.algostreak.com/post/stringoholics-interviewbit-solution
+		// https://www.algostreak.com/post/stringoholics-interviewbit-solution
 		// The size of smallest substring that can be repeated to get the whole string.
 		public static int GetSmallestSubString(string str)
 		{

@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace CSharpProblemSolving.Strings
 {
-	//https://www.interviewbit.com/problems/palindrome-string/
+						//https://www.interviewbit.com/problems/palindrome-string/
 	public static class IsPalindrome
 	{
 		public static void Samples()

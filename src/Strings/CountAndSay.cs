@@ -3,6 +3,7 @@ using System.Text;
 
 namespace CSharpProblemSolving.Strings
 {
+	// https://www.interviewbit.com/problems/count-and-say/
 	public static class CountAndSay
 	{
 		public static void Samples()

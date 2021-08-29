@@ -24,11 +24,12 @@ namespace CSharpProblemSolving.Strings
 			// ret = LongestCommonSubSequence("ABAC", "CABA", StringComparison.Ordinal);
 			// val = PrintLongestCommonSubSequence("ABAC", "CABA", StringComparison.Ordinal);
 			// Console.WriteLine($"Ret = {ret}, LCS = {val}");
+			var test = MadHelper.BuildKmpPrefixArray("adam$mada");
 
 			Console.WriteLine(LongestPalindromeLengthManacherAlgo("abba"));
 		}
 
-		// https://www.geeksforgeeks.org/minimum-number-appends-needed-make-string-palindrome/
+			// https://www.geeksforgeeks.org/minimum-number-appends-needed-make-string-palindrome/
 		// num of strings that can append at the end to make the string palindrome
 		// ex: abcb -> add a at the end to make palindrome => abcba, similarly abbcc => abbccbba
 		// We solve this using KMP (Knuth Morris Pratt Algorithm)
@@ -39,7 +40,7 @@ namespace CSharpProblemSolving.Strings
 			// We can do as done in https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
 
 			// Steps here will be:
-			// 1. Reversr(STR)+"$"+STR
+			// 1. Reverse(STR)+"$"+STR
 			// 2. Fill up LPS array
 			// 3. Return length-lps(n-1), where n is length of concatenated string in step1
 			var totalString = reverse + "$" + str;
@@ -57,7 +58,7 @@ namespace CSharpProblemSolving.Strings
 			// We can do as done in https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
 
 			// Steps here will be:
-			// 1. Reversr(STR)+"$"+STR
+			// 1. STR + "$" + Reverse(STR)
 			// 2. Fill up LPS array
 			// 3. Return length-lps(n-1), where n is length of concatenated string in step1
 			var totalString = str + "$" + reverse;

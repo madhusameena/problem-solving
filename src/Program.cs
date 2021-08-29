@@ -1,9 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using CSharpProblemSolving.Adventofcode_Dec_20;
+using CSharpProblemSolving.Algorithms.Recursive;
+using CSharpProblemSolving.Arrays;
+using CSharpProblemSolving.Backtrack;
+using CSharpProblemSolving.BinaryTree;
+using CSharpProblemSolving.BST;
 using CSharpProblemSolving.CodeJam_2020;
+using CSharpProblemSolving.DP;
+using CSharpProblemSolving.Graphs;
 using CSharpProblemSolving.LinkedList;
 using CSharpProblemSolving.QueueOperations;
 using CSharpProblemSolving.StackOperations;
@@ -41,9 +50,26 @@ namespace CSharpProblemSolving
 
 			return sum;
 		}
+
 		static void Main(string[] args)
 		{
-			LargestRectInHistogram.Samples();
+			// for (int k = 0; k <= 16; k++)
+			// {
+			// 	Console.Write($"Val: {k}");
+			// 	for (int j = 0; j < 20; j++)
+			// 	{
+			// 		// for (int i = 0; i < k; i++)
+			// 		{
+			// 			if ((k & (1 << j)) == k)
+			// 			{
+			// 				Console.Write($" {k} ");
+			// 			}
+			// 		}
+			// 		
+			// 	}
+			// 	Console.WriteLine();
+			// }
+			NumberOfIslands.Samples();
 		}
 	}
 }

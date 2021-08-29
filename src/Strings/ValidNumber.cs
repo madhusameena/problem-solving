@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace CSharpProblemSolving.Strings
 {
+	// https://www.interviewbit.com/problems/valid-number/
 	public static class ValidNumber
 	{
 		public static void Samples()
@@ -81,6 +82,56 @@ namespace CSharpProblemSolving.Strings
 			}
 
 			return 1;
+		}
+		private static bool IsOnlyNumbers(string s, bool allowEmpty)
+		{
+			if(!allowEmpty && String.IsNullOrEmpty(s))
+				return false;
+
+			foreach(char c in s)
+			{
+				if(c < '0' || c > '9')
+					return false;
+			}
+			return true;
+		}
+    
+		private static bool IsOnlyNumbersAndSign(string s, bool allowEmpty)
+		{
+			if(s.Length >= 1 && (s[0] == '+' || s[0] == '-'))
+				return IsOnlyNumbers(s.Substring(1), allowEmpty);
+			else
+				return IsOnlyNumbers(s, allowEmpty);
+		}
+    
+		private static bool IsRegularNumber(string s)
+		{
+			int dotIndex = s.IndexOf('.');
+			if(dotIndex == -1)
+			{
+				return IsOnlyNumbersAndSign(s, false);
+			}
+			else
+			{
+				string beforeDot = s.Substring(0, dotIndex);
+				string afterDot = s.Substring(dotIndex + 1);
+				return IsOnlyNumbersAndSign(beforeDot, true) && IsOnlyNumbers(afterDot, false);
+			}
+		}
+    
+		public static int isNumberSol(string A) {
+        
+			A = A.Trim();
+        
+			int eIndex = A.IndexOf('e');
+			if(eIndex == -1)
+				return IsRegularNumber(A) ? 1 : 0;
+			else
+			{
+				string beforeE = A.Substring(0, eIndex);
+				string afterE = A.Substring(eIndex + 1);
+				return (IsRegularNumber(beforeE) && IsOnlyNumbersAndSign(afterE, false)) ? 1 : 0;
+			}
 		}
 	}
 }

@@ -145,5 +145,36 @@ namespace CSharpProblemSolving.Strings
 			list.Add(sb.ToString());
 			tempList.RemoveAt(tempList.Count - 1);
 		}
+		public static List<string> restoreIpAddressesSol(string str) {
+			if (str == null) return null;
+			var validIps = new List<string>();
+        
+			for (var i = 1; i < 4 && i < str.Length; i++) {
+				var first = str.Substring(0, i);
+				if (valid(first)) {
+					for (var j = 1; j + i < str.Length && j < 4; j++) {
+						var second = str.Substring(i, j);
+						if (valid(second)) {
+							for (var k = 1; k + j + i < str.Length && k < 4; k++) {
+								var third = str.Substring(j + i, k);
+								var fourth = str.Substring(i + j + k);
+								if (valid(third) && valid(fourth)) {
+									validIps.Add(first + "." + second + "." + third + "." + fourth);
+								}
+							}
+						}
+					}
+				}
+			}
+			return validIps;
+		}
+    
+		private static bool valid(string str) {
+			if (str.Length == 0 || str.Length > 3) return false;
+			if (str[0] == '0' && str.Length > 1) return false;
+			var value = int.Parse(str);
+			return value >= 0 && value <= 255;
+		}
 	}
+	
 }

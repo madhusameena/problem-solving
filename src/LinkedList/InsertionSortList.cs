@@ -40,9 +40,7 @@ namespace CSharpProblemSolving.LinkedList
 					if (node2.val < node1.val)
 					{
 						// Swap values
-						var temp = node1.val;
-						node1.val = node2.val;
-						node2.val = temp;
+						(node1.val, node2.val) = (node2.val, node1.val);
 					}
 
 					node1 = node1.next;

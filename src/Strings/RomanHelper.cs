@@ -76,20 +76,16 @@ namespace CSharpProblemSolving.Strings
 					if (idx < romanNum.Length)
 					{
 						prev = dictValues[romanNum[idx]];
-						if (idx == romanNum.Length - 1)
-						{
-							num += prev;
-						}
 					}
 				}
 				else
 				{
 					num += prev;
 					prev = current;
-					if (idx == romanNum.Length - 1)
-					{
-						num += prev;
-					}
+				}
+				if (idx == romanNum.Length - 1)
+				{
+					num += prev;
 				}
 			}
 			return num;
