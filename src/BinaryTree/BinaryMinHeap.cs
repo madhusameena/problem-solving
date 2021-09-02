@@ -4,6 +4,24 @@ namespace CSharpProblemSolving.BinaryTree
 {
 	public class BinaryMinHeap
 	{
+		public static void Samples()
+		{
+			BinaryMinHeap h = new BinaryMinHeap(11);
+			h.Insert(3);
+			h.Insert(2);
+			h.DeleteKey(1);
+			h.Insert(15);
+			h.Insert(5);
+			h.Insert(4);
+			h.Insert(45);
+
+			Console.Write(h.PopMin() + " ");
+			Console.Write(h.GetMin() + " ");
+
+			h.DecreaseKey(2, 1);
+			Console.Write(h.GetMin());
+		}
+
 		private readonly int m_size;
 		private int m_currentIndex;
 		private int[] m_numbers;
@@ -49,7 +67,7 @@ namespace CSharpProblemSolving.BinaryTree
 		{
 			if (m_currentIndex == 0)
 			{
-				return int.MinValue;
+				throw new InvalidOperationException("No data");
 			}
 
 			if (m_currentIndex == 1)
@@ -68,6 +86,10 @@ namespace CSharpProblemSolving.BinaryTree
 
 		public int GetMin()
 		{
+			if (m_currentIndex == 0)
+			{
+				throw new InvalidOperationException("No data");
+			}
 			return m_numbers[0];
 		}
 		// A recursive method to heapify a subtree 
@@ -104,22 +126,10 @@ namespace CSharpProblemSolving.BinaryTree
 			MinHeapify(movementIdx);
 		}
 
-		public static void Samples()
+		
+		public int GetCount()
 		{
-			BinaryMinHeap h = new BinaryMinHeap(11);
-			h.Insert(3);
-			h.Insert(2);
-			h.DeleteKey(1);
-			h.Insert(15);
-			h.Insert(5);
-			h.Insert(4);
-			h.Insert(45);
-      
-			Console.Write(h.PopMin() + " ");
-			Console.Write(h.GetMin() + " ");
-      
-			h.DecreaseKey(2, 1);
-			Console.Write(h.GetMin());
+			return m_currentIndex;
 		}
 
 		private void Swap<T>(ref T num1, ref T num2)

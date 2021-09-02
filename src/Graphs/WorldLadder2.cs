@@ -1,32 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CSharpProblemSolving.BinaryTree
+namespace CSharpProblemSolving.Graphs
 {
-	// https://www.youtube.com/watch?v=ZVJ3asMoZ18
-	// https://leetcode.com/problems/word-ladder/
-	public class WordLadder
+	// https://leetcode.com/problems/word-ladder-ii/
+	public class WorldLadder2
 	{
-		public static void Samples()
+		// TODO Finish it
+		public IList<IList<string>> FindLadders(string beginWord, string endWord, IList<string> wordList)
 		{
-			var wordList = new[] { "hot", "dot", "dog", "lot", "log", "cog" };
-			Console.WriteLine(LadderLength("hit", "cog", wordList));
-			
-			wordList = new[] { "hot","dot","dog","lot","log" };
-			Console.WriteLine(LadderLength("hit", "cog", wordList));
-		}
-
-		public static int LadderLength(string beginWord, string endWord, IList<string> wordList) 
-		{
+			IList<IList<string>> responses = new List<IList<string>>();
 			HashSet<string> tempWorldList = new HashSet<string>();
 			foreach (var s in wordList)
 			{
 				tempWorldList.Add(s);
 			}
 			if (!wordList.Contains(endWord) ||
-			    beginWord == endWord)
+				beginWord == endWord)
 			{
-				return 0;
+				return responses;
 			}
 
 			// Use BFS - to find the short path
@@ -55,7 +50,7 @@ namespace CSharpProblemSolving.BinaryTree
 
 							if (str == endWord)
 							{
-								return depth + 1;
+								//return depth + 1;
 							}
 
 							if (tempWorldList.Contains(str))
@@ -65,11 +60,10 @@ namespace CSharpProblemSolving.BinaryTree
 							}
 						}
 					}
-					
+
 				}
 			}
-
-			return 0;
+			return responses;
 		}
 	}
 }
