@@ -48,5 +48,39 @@ namespace CSharpProblemSolving.Arrays
 				Console.WriteLine();
 			}
 		}
+		// https://www.interviewbit.com/problems/3-sum-zero/
+		public List<List<int>> threeSum(List<int> A)
+		{
+			A.Sort();
+			var len = A.Count;
+			var list = new List<List<int>>();
+			HashSet<(int, int, int)> result = new HashSet<(int, int, int)>();
+			for (int i = 0; i < len - 2; i++)
+			{
+				int left = i + 1, right = len - 1;
+				while (left < right)
+				{
+					var sum = A[i] + A[left] + A[right];
+					if (sum == 0)
+					{
+						var tuple = (A[i], A[left], A[right]);
+						if (!result.Contains(tuple))
+						{
+							result.Add(tuple);
+							list.Add(new List<int>() { A[i], A[left], A[right] });
+						}
+					}
+					else if (sum < 0)
+					{
+						left++;
+					}
+					else
+					{
+						right--;
+					}
+				}
+			}
+			return list;
+		}
 	}
 }

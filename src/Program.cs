@@ -9,6 +9,7 @@ using CSharpProblemSolving.Algorithms.Recursive;
 using CSharpProblemSolving.Arrays;
 using CSharpProblemSolving.Backtrack;
 using CSharpProblemSolving.BinarySearch;
+using CSharpProblemSolving.BinaryTree;
 using CSharpProblemSolving.BST;
 using CSharpProblemSolving.CodeJam_2020;
 using CSharpProblemSolving.DP;
@@ -18,6 +19,7 @@ using CSharpProblemSolving.LinkedList;
 using CSharpProblemSolving.QueueOperations;
 using CSharpProblemSolving.StackOperations;
 using CSharpProblemSolving.Strings;
+using CSharpProblemSolving.Trie;
 
 namespace CSharpProblemSolving
 {
@@ -54,7 +56,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			LongestConsecutiveSequence.Samples();
+			IncreasingPathInMatrix.Samples();
 		}
 	}
 }
