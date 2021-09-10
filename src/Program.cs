@@ -56,7 +56,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			IncreasingPathInMatrix.Samples();
+			MergeIntervals.Samples();
 		}
 	}
 }
