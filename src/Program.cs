@@ -56,7 +56,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			MergeIntervals.Samples();
+			MultiplyStrings.Samples();
 		}
 	}
 }

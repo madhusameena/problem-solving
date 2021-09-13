@@ -8,6 +8,7 @@ namespace CSharpProblemSolving.Arrays
 {
 	// https://www.youtube.com/watch?v=3Q0v2JFx6dQ
 	// https://www.interviewbit.com/problems/kth-row-of-pascals-triangle/
+	// https://leetcode.com/problems/pascals-triangle-ii/
 	public class KthRowPascal
 	{
 		public static void Samples()
@@ -41,13 +42,13 @@ namespace CSharpProblemSolving.Arrays
 			{
 				i = n - i;
 			}
-			int number = 1;
+			long number = 1;
 			for (int idx = 0; idx < i; idx++)
 			{
 				number *= (n - idx);
 				number /= (idx + 1);
 			}
-			return number;
+			return (int)number;
 		}
 	}
 }
