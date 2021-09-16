@@ -8,26 +8,44 @@ namespace CSharpProblemSolving.LinkedList
 {
 	// https://leetcode.com/problems/merge-k-sorted-lists/
 	// https://www.interviewbit.com/problems/merge-k-sorted-lists/
+	// https://www.youtube.com/watch?v=kpCesr9VXDA&t=273s
 	public class MergeKSortedLists
 	{
-		public ListNode MergeKLists(ListNode[] lists)
+		// TODO Find Effective method
+		public ListNode MergeKListsDivideAndConquer(ListNode[] lists)
 		{
-			if (lists.Length == 0)
+			int k = lists.Length;
+			if (k == 0)
 			{
 				return null;
 			}
-			if (lists.Length == 1)
+			if (k == 1)
 			{
 				return lists[0];
 			}
-			var firstNode = lists[0];
-			for (int i = 1; i < lists.Length; i++)
-			{
-				firstNode = MergeLists(firstNode, lists[i]);
-			}
-			return firstNode;
+			//Array.Sort(lists, (a, b) => a.val.CompareTo(b.val));
+			ListNode h1 = SplitAndMerge(lists, 0, (k / 2) - 1);// Left side
+			ListNode h2 = SplitAndMerge(lists, k / 2, k - 1);
+			// Merge h1 and h1
+			return MergeLists(h1, h2);
 		}
 
+		private ListNode SplitAndMerge(ListNode[] lists, int start, int end)
+		{
+			if (start > end)
+			{
+				return null;
+			}
+			if (start == end)
+			{
+				return lists[start];
+			}
+			// Split into 2 half
+			int k = end - start + 1;
+			var h1 = SplitAndMerge(lists, start, start + (k / 2) - 1);
+			var h2 = SplitAndMerge(lists, start + (k / 2), end);
+			return MergeLists(h1, h2);
+		}
 		private ListNode MergeLists(ListNode firstNode, ListNode listNode)
 		{
 			ListNode node = new ListNode(-1);
@@ -69,5 +87,25 @@ namespace CSharpProblemSolving.LinkedList
 			}
 			return root.next;
 		}
+
+		public ListNode MergeKListsBruteForce(ListNode[] lists)
+		{
+			if (lists.Length == 0)
+			{
+				return null;
+			}
+			if (lists.Length == 1)
+			{
+				return lists[0];
+			}
+			var firstNode = lists[0];
+			for (int i = 1; i < lists.Length; i++)
+			{
+				firstNode = MergeLists(firstNode, lists[i]);
+			}
+			return firstNode;
+		}
+
+		
 	}
 }
