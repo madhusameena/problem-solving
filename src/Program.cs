@@ -14,6 +14,7 @@ using CSharpProblemSolving.BST;
 using CSharpProblemSolving.CodeJam_2020;
 using CSharpProblemSolving.DP;
 using CSharpProblemSolving.Graphs;
+using CSharpProblemSolving.Greedy;
 using CSharpProblemSolving.Hashing;
 using CSharpProblemSolving.LinkedList;
 using CSharpProblemSolving.QueueOperations;
@@ -56,7 +57,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			MaxPointsOnALine.Samples();
+			NoOverlappingIntervals.Samples();
 		}
 	}
 }
