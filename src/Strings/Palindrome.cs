@@ -185,7 +185,7 @@ namespace CSharpProblemSolving.Strings
 			var lcsArray = LcsArray(str1, str2, stringComparison);
 			var lcsLength = lcsArray[str1.Length, str2.Length];
 			
-			// Lenght of lcs = lcsArray.Length
+			// Length of lcs = lcsArray.Length
 			char[] lcs = new char[lcsLength];
 			
 			//		  a b c d a f

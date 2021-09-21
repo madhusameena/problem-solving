@@ -51,5 +51,81 @@ namespace CSharpProblemSolving.StackOperations
 
 			return frontCount == backCount ? 1 : 0;
 		}
+		// https://leetcode.com/problems/valid-parentheses
+		public static bool IsValidComb(string s)
+		{
+			Stack<char> stack = new Stack<char>();
+			foreach (var ch in s)
+			{
+				if (ch == '{' ||
+				   ch == '[' ||
+				   ch == '(')
+				{
+					stack.Push(ch);
+				}
+				else if (stack.Count > 0)
+				{
+					if (ch == '}')
+					{
+						if (stack.Peek() != '{')
+						{
+							return false;
+						}
+						stack.Pop();
+					}
+					else if (ch == ']')
+					{
+						if (stack.Peek() != '[')
+						{
+							return false;
+						}
+						stack.Pop();
+					}
+					else if (ch == ')')
+					{
+						if (stack.Peek() != '(')
+						{
+							return false;
+						}
+						stack.Pop();
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
+			return stack.Count == 0;
+
+		}
+		// https://www.interviewbit.com/problems/balanced-parantheses/
+		public static int BalancedParantheses_IB(string s)
+		{
+			Stack<char> stack = new Stack<char>();
+			foreach (var ch in s)
+			{
+				if (ch == '(')
+				{
+					stack.Push(ch);
+				}
+				else if (stack.Count > 0)
+				{
+					if (ch == ')' && stack.Peek() == '(')
+					{
+						stack.Pop();
+					}
+					else
+					{
+						stack.Push(ch);
+					}
+				}
+				else
+				{
+					stack.Push(ch);
+				}
+			}
+			return stack.Count == 0 ? 1 : 0;
+
+		}
 	}
 }

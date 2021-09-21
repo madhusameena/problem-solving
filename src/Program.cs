@@ -57,7 +57,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			NoOverlappingIntervals.Samples();
+			NQueen.Samples();
 		}
 	}
 }
