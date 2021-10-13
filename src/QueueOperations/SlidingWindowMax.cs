@@ -6,7 +6,7 @@ using CSharpProblemSolving.Strings;
 namespace CSharpProblemSolving.QueueOperations
 {
 	// https://www.youtube.com/watch?v=39grPZtywyQ
-	public static class SlidingWindowMax
+	public class SlidingWindowMax
 	{
 		class MyTuple
 		{
@@ -75,6 +75,36 @@ namespace CSharpProblemSolving.QueueOperations
 			}
 
 			return ans;
+		}
+		// https://leetcode.com/problems/sliding-window-maximum/
+		public int[] MaxSlidingWindow(int[] nums, int k)
+		{
+			int len = nums.Length - k + 1;
+			if (len < 1)
+			{
+				return new int[] { };
+			}
+			//var ans = new int[len];
+			var ans = new List<int>(len);
+			List<int> list = new List<int>();
+			for (var index = 0; index < nums.Length; index++)
+			{
+				if (list.Count > 0 && list[0] + k  <= index)
+				{
+					list.RemoveAt(0);
+				}
+				while (list.Count > 0 && 
+					nums[list[^1]] < nums[index])
+				{
+					list.RemoveAt(list.Count - 1);
+				}
+				list.Add(index);
+				if (index + 1 >= k)
+				{
+					ans.Add(nums[list[0]]);
+				}
+			}
+			return ans.ToArray();
 		}
 		public static  List<int> slidingMaximum_(List<int> A, int B)
 		{

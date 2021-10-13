@@ -102,11 +102,11 @@ namespace CSharpProblemSolving.BinaryTree
 			{
 				return -1;
 			}
-			for (int j = 0; j <= m_logCount; j++)
+			for (int i = 0; i <= m_logCount; i++)
 			{
-				if ((k & (1 << j)) != 0)
+				if ((k & (1 << i)) > 0)
 				{
-					node = m_parents[node, j];
+					node = m_parents[node, i];
 					if (node == -1)
 					{
 						return node;

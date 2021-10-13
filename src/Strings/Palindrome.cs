@@ -132,6 +132,8 @@ namespace CSharpProblemSolving.Strings
 
 		// https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
 		// https://www.youtube.com/watch?v=NnD96abizww
+		// https://leetcode.com/problems/longest-common-subsequence/
+		// https://www.interviewbit.com/problems/longest-common-subsequence/
 		// LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
 		// LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
 		public static int LongestCommonSubSequence(string str1, string str2,  StringComparison stringComparison)

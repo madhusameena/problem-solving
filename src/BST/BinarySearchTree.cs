@@ -202,8 +202,8 @@ namespace CSharpProblemSolving.BST
 			}
 
 			Console.Write($"{node.data}\t");
-			DepthFirstSearchInOrder(node.left);
-			DepthFirstSearchInOrder(node.right);
+			DepthFirstSearchPreOrder(node.left);
+			DepthFirstSearchPreOrder(node.right);
 		}
 		public void DepthFirstSearchPostOrder(Node node)
 		{
@@ -212,8 +212,8 @@ namespace CSharpProblemSolving.BST
 				return;
 			}
 
-			DepthFirstSearchInOrder(node.left);
-			DepthFirstSearchInOrder(node.right);
+			DepthFirstSearchPostOrder(node.left);
+			DepthFirstSearchPostOrder(node.right);
 			Console.Write($"{node.data}\t");
 		}
 	}

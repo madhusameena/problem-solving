@@ -55,6 +55,7 @@ namespace CSharpProblemSolving.DP
 
 			return maxArea;
 		}
+		// https://leetcode.com/problems/largest-rectangle-in-histogram/
 		public int largestRectangleArea(List<int> A)
 		{
 			Stack<int> stack = new Stack<int>();

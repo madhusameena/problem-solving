@@ -10,6 +10,7 @@ using CSharpProblemSolving.Arrays;
 using CSharpProblemSolving.Backtrack;
 using CSharpProblemSolving.BinarySearch;
 using CSharpProblemSolving.BinaryTree;
+using CSharpProblemSolving.Bits;
 using CSharpProblemSolving.BST;
 using CSharpProblemSolving.CodeJam_2020;
 using CSharpProblemSolving.DP;
@@ -57,7 +58,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			NQueen.Samples();
+			LargestNumberProblem.Samples();
 		}
 	}
 }
