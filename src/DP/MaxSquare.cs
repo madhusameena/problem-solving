@@ -45,7 +45,6 @@ namespace CSharpProblemSolving.DP
 			for (row = 0; row < rows; row++)
 			{
 				matrix[row, col] = 0;
-				;
 			}
 			for (row = 1; row < rows; row++)
 			{

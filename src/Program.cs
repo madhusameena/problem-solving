@@ -58,7 +58,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			LargestNumberProblem.Samples();
+			RemoveKDigitsProblem.Samples();
 		}
 	}
 }
