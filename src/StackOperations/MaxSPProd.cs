@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace CSharpProblemSolving.StackOperations
 {
+	// https://www.interviewbit.com/problems/maxspprod/
 	public static class MaxSPProd
 	{
 		public static void Samples()

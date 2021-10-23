@@ -12,7 +12,7 @@ namespace CSharpProblemSolving.BinaryTree
 	{
 		public static void Samples()
 		{
-			Console.WriteLine(FindPeakElement(new int[] { 1, 2, 3, 4, 5 }));
+			Console.WriteLine(FindPeakElement(new int[] { 1, 7, 2, 3, 4, 1,  5 }));
 		}
 		public static int FindPeakElement(int[] nums)
 		{

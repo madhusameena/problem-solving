@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace CSharpProblemSolving.QueueOperations
 {
+	// https://www.interviewbit.com/problems/first-non-repeating-character-in-a-stream-of-characters/
 	public static class FirstNonRepeatingChar
 	{
 		public static void Samples()

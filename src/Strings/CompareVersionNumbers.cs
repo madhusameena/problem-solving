@@ -27,7 +27,7 @@ namespace CSharpProblemSolving.Strings
 				int verB = 0;
 				string strA = mathesA.Groups[idx].Value.TrimStart('0');
 				string strB = mathesB.Groups[idx].Value.TrimStart('0');
-				Console.WriteLine($"StrA = {strA}, strB = {strB}");
+				//Console.WriteLine($"StrA = {strA}, strB = {strB}");
 				// Console.WriteLine($"A len = {strA.Length}, B len  = {strB.Length}");
 				if (string.IsNullOrEmpty(strA) && string.IsNullOrEmpty(strB))
 				{

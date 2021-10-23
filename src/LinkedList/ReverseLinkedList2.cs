@@ -2,13 +2,37 @@
 
 namespace CSharpProblemSolving.LinkedList
 {
-	public static class ReverseLinkedList2
+	// https://www.interviewbit.com/problems/reverse-link-list-ii/
+	public class ReverseLinkedList2
 	{
 		public static void Samples()
 		{
 			var node1 = ListNodeHelper.GetListNode(new[] { 1, 2, 3, 4, 5 });
 			var result = reverseBetween(node1, 2, 2);
 			result.PrintChain();
+		}
+		public ListNode reverseBetweenSol(ListNode head, int start, int end)
+		{
+			if (head == null)
+				return null;
+			var dummy = new ListNode(-1);
+			dummy.next = head;
+
+			var prev = dummy;
+			var k = 1;
+			while (k++ < start)
+				prev = prev.next;
+
+			var current = prev.next;
+			while (start++ < end)
+			{
+				var next = current.next;
+				current.next = next.next;
+				next.next = prev.next;
+				prev.next = next;
+			}
+
+			return dummy.next;
 		}
 		public static ListNode reverseBetween(ListNode A, int B, int C)
 		{

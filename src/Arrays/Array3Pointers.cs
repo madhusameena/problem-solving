@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpProblemSolving.Arrays
 {
+	// https://www.interviewbit.com/problems/array-3-pointers/
 	public class Array3Pointers
 	{
 		public int minimize(List<int> A, List<int> B, List<int> C)

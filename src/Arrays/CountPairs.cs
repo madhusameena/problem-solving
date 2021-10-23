@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace CSharpProblemSolving.Arrays
 {
+    // https://www.geeksforgeeks.org/count-pairs-with-given-sum/
     public static class CountPairs
     {
         public static void Samples()
@@ -30,12 +31,12 @@ namespace CSharpProblemSolving.Arrays
         public static int countPairsWithSum(int[] arr, int sum)
         {
             Hashtable hashrecords = new Hashtable();
+            //HashSet<int> hashrecords = new HashSet<int>();
             int count = 0;
-            int diff = 0;
-            for (int i = 0; i < arr.Length; i++)
+			for (int i = 0; i < arr.Length; i++)
             {
-                diff = sum - arr[i];
-                if (hashrecords.Contains(diff))
+				int diff = sum - arr[i];
+				if (hashrecords.Contains(diff))
                 {
                     count += Convert.ToInt32(hashrecords[diff]);
                 }

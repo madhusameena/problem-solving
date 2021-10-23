@@ -30,6 +30,7 @@ namespace CSharpProblemSolving.Graphs
 			int depth = 0;
 			while (queue.Count > 0)
 			{
+				var response = new List<string>();
 				depth++;
 				int width = queue.Count;
 				for (var idx = 0; idx < width; idx++)
@@ -47,9 +48,12 @@ namespace CSharpProblemSolving.Graphs
 							{
 								continue;
 							}
+							response.Add(str);
 
 							if (str == endWord)
 							{
+								responses.Add(response);
+								break;
 								//return depth + 1;
 							}
 

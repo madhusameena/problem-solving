@@ -33,34 +33,30 @@ namespace CSharpProblemSolving.BinarySearch
 		}
 		private static void BinarySearch(ref int index, int[] nums, int start, int end, int target, bool isStart)
 		{
-			int middle = (end + start) / 2;
-			if (start > end)
+			while (start <= end)
 			{
-				return;
-			}
-
-			if (nums[middle] == target)
-			{
-				index = middle;
-				if (isStart)
+				int middle = (end + start) / 2;
+				if (nums[middle] == target)
 				{
-					end = middle - 1;
+					index = middle;
+					if (isStart)
+					{
+						end = middle - 1;
+					}
+					else
+					{
+						start = middle + 1;
+					}
 				}
-				else
+				else if (nums[middle] < target)
 				{
 					start = middle + 1;
 				}
+				else
+				{
+					end = middle - 1;
+				}
 			}
-			else if (nums[middle] < target)
-			{
-				start = middle + 1;
-			}
-			else
-			{
-				end = middle -1;
-			}
-
-			BinarySearch(ref index, nums, start, end, target, isStart);
 		}
 	}
 }

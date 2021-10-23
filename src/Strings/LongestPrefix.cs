@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace CSharpProblemSolving.Strings
 {
-	public static class LongestPrefix
+	// https://www.interviewbit.com/problems/longest-common-prefix/
+	public class LongestPrefix
 	{
 		public static void Samples()
 		{
@@ -53,7 +54,7 @@ namespace CSharpProblemSolving.Strings
 			var ans = A[0];
 			for(int i = 1; i < A.Count; i++){
 				int end;
-				int n = ans.Length > A[i].Length ? A[i].Length : ans.Length;
+				int n = Math.Min(ans.Length, A[i].Length);
 				for(end = 0; end < n; end++){
 					if(A[i][end] != ans[end]) break;
 				}

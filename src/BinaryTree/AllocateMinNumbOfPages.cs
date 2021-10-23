@@ -7,6 +7,7 @@ namespace CSharpProblemSolving.BinaryTree
 	// https://www.geeksforgeeks.org/allocate-minimum-number-pages/
 	// https://www.youtube.com/watch?v=gYmWHvRHu-s
 	// https://www.interviewbit.com/problems/allocate-books/
+	// https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 	public class AllocateMinNumbOfPages
 	{
 
@@ -42,9 +43,10 @@ namespace CSharpProblemSolving.BinaryTree
 			}
 
 			// Min value is max of the array, max will be sum
-			int left = books.Max(), right = books.Aggregate((x, y) => x + y);
+			//int left = books.Max(), right = books.Aggregate((x, y) => x + y);
+			int left = books[0], right = int.MaxValue;
 			// int res = -1;
-			while (left <= right)
+			while (left < right)
 			{
 				int mid = (left + right) / 2;
 				if (Solve(books, mid, studentCount))

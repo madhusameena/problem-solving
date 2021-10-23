@@ -3,6 +3,8 @@ using System.Security.Cryptography;
 
 namespace CSharpProblemSolving.LinkedList
 {
+	// https://www.interviewbit.com/problems/k-reverse-linked-list/
+	// https://leetcode.com/problems/reverse-nodes-in-k-group/
 	public static class KReverseLinkedList
 	{
 		public static void Samples()

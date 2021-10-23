@@ -4,6 +4,7 @@ using System.Text;
 
 namespace CSharpProblemSolving.Strings
 {
+	// https://www.interviewbit.com/problems/add-binary-strings/
 	public static class AddBinary
 	{
 		public static string addBinary(string A, string B)

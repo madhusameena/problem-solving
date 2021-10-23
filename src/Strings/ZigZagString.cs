@@ -4,6 +4,7 @@ using System.Text;
 
 namespace CSharpProblemSolving.Strings
 {
+	// https://www.interviewbit.com/problems/zigzag-string/
 	public static class ZigZagString
 	{
 		public static void solve()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpProblemSolving.Algorithms.Greedy
 {
+	// https://leetcode.com/problems/gas-station/
 	public class GasStation
 	{
 		public static void Samples()

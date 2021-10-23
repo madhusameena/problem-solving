@@ -44,21 +44,5 @@ namespace CSharpProblemSolving.DP
             }
             return dp[str.Length - 1] > 0 ? 1 : 0;
         }
-        public bool wordBreak(int index, string s, HashSet<string> dict)
-        {
-            // BASE CASES
-
-            bool result = false;
-            // try to construct all substrings.
-            for (int i = index; i < s.Length; i++)
-            {
-                var substring = s.Substring(index, i);// *the substring s[index..i] with i inclusive *
-				if (dict.Contains(substring))
-				{
-                    result |= wordBreak(i + 1, s, dict);
-                }
-            }
-            return result;
-        }
     }
 }

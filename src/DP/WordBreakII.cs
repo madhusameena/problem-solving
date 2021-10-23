@@ -56,35 +56,6 @@ namespace CSharpProblemSolving.DP
             return list;
 		}
 
-		public static int wordBreak(string str, List<string> wordDict)
-        {
-            HashSet<string> hash = new HashSet<string>();
-            foreach (var item in wordDict)
-            {
-                hash.Add(item);
-            }
-            var dp = new int[str.Length];
-            for (int i = 0; i < dp.Length; i++)
-            {
-                for (int j = 0; j <= i; j++)
-                {
-                    var subStr = str.Substring(j, i - j + 1);
-
-                    if (hash.Contains(subStr))
-                    {
-                        if (j > 0)
-                        {
-                            dp[i] += dp[j - 1];
-                        }
-                        else
-                        {
-                            dp[i]++;
-                        }
-                    }
-                }
-            }
-            return dp[str.Length - 1];
-        }
         public static IList<string> wordBreak2(string str, IList<string> wordDict)
         {
             HashSet<string> hash = new HashSet<string>();

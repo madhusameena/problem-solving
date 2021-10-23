@@ -62,7 +62,8 @@ namespace CSharpProblemSolving.Trie
 			var current = this;
 			foreach (var item in str)
 			{
-				if (current.Children[item] == null)
+				int index = item - 'a';
+				if (current.Children[index] == null)
 				{
 					return false;
 				}

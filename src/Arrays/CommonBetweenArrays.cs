@@ -8,9 +8,9 @@ namespace CSharpProblemSolving.Arrays
 	{
 		public static void Samples()
 		{
-			int[] ar1 = {1, 5, 5, 10} ;
-			int[] ar2 = {3, 4, 5, 5, 10} ;
-			int[] ar3 = {5, 5, 10, 20, 22, 33, 55, 10} ;
+			int[] ar1 = { 1, 5, 5, 10 };
+			int[] ar2 = { 3, 4, 5, 5, 10 };
+			int[] ar3 = { 5, 5, 10, 20, 22, 33, 55, 10 };
 			var list = CommonElements(ar1, ar2, ar3);
 			foreach (var i in list)
 			{

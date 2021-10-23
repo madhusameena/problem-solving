@@ -24,7 +24,6 @@ namespace CSharpProblemSolving.Arrays
                 }
                 maxSum = Math.Max(sum, maxSum);
             }
-            maxSum = Math.Max(sum, maxSum);
             return maxSum;
         }
     }

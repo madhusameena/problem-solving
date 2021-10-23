@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CSharpProblemSolving.Greedy
 {
-	public class RemoveKDigitsProblem
+    // https://leetcode.com/problems/remove-k-digits/
+    public class RemoveKDigitsProblem
 	{
         public static void Samples()
         {

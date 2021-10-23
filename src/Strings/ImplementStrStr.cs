@@ -3,13 +3,37 @@
 namespace CSharpProblemSolving.Strings
 {
 	// https://www.interviewbit.com/problems/implement-strstr/
-	public static class ImplementStrStr
+	public class ImplementStrStr
 	{
 		public static void Samples()
 		{
 			Console.WriteLine(strStr("NsfdfAb", "Ab"));
 			Console.WriteLine(strStr("bbaabbbbbaabbaabbbbbbabbbabaabbbabbabbbbababbbabbabaaababbbaabaaaba", "babaaa")); // 48
 			Console.WriteLine(strStr("aaaaabbabbaaaababbbbaaabbbaababaababbaabaabaaabbabab", "bbbaababaa")); // 23	
+		}
+		public int strStrSol(string A, string B)
+		{
+			if (A.Length == 0)
+				return -1;
+			if (A.Length == 0)
+				return -1;
+			int j = 0;
+			int position;
+			for (int i = 0; i <= A.Length - B.Length; i++)
+			{
+				position = i;
+				while (j < B.Length && A[position] == B[j])
+				{
+					j++;
+					position++;
+				}
+				if (j == B.Length)
+				{
+					return i;
+				}
+				j = 0;
+			}
+			return -1;
 		}
 		public static int strStr(string A, string B)
 		{

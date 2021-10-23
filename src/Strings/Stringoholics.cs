@@ -214,7 +214,6 @@ public class Solution {
 			var sln = new Solution();
 			var testSln = sln.solve(A);
 			Console.WriteLine($"From sln = {testSln}");
-			List<int> repeats = new List<int>();
 			long lcm = -1;
 			int ans = 1;
 			for (var index = 0; index < A.Count; index++)
@@ -224,8 +223,6 @@ public class Solution {
 				// var test = prefix_function(s);
 				if (test != 0)
 				{
-					// test = test % 1000000007;
-					repeats.Add(test);
 					if (lcm == -1)
 					{
 						lcm = test;
@@ -238,9 +235,6 @@ public class Solution {
 					ans *= test;
 				}
 			}
-
-			long totalLcm = LcmOfArrayElements(repeats);
-			Console.WriteLine($"Grp LCM = {totalLcm % 1000000007}");
 
 			return (int) (lcm % 1000000007);
 		}
@@ -279,16 +273,11 @@ public class Solution {
 			else return s.Length;
      
 		}
-		public static int LCM(int a, int b)
+		public static int LCM(int num1, int num2)
 		{
-			int num1, num2;
-			if (a > b)
+			if (num2 > num1)
 			{
-				num1 = a; num2 = b;
-			}
-			else
-			{
-				num1 = b; num2 = a;
+				return LCM(num2, num1);
 			}
 
 			for (int i = 1; i < num2; i++)
