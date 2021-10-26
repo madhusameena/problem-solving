@@ -29,12 +29,15 @@ namespace CSharpProblemSolving.Strings
 			Console.WriteLine(LongestPalindromeLengthManacherAlgo("abba"));
 		}
 
-			// https://www.geeksforgeeks.org/minimum-number-appends-needed-make-string-palindrome/
+		// https://www.geeksforgeeks.org/minimum-number-appends-needed-make-string-palindrome/
+		/* IMP-----
+		 Here we are only interested in the last value of this lps array because it shows us the largest suffix of the reversed string that matches the prefix of the original string i.e these many characters already satisfy the palindrome property. Finally minimum number of character needed to make the string a palindrome is length of the input string minus last entry of our lps array
+		 */
 		// num of strings that can append at the end to make the string palindrome
 		// ex: abcb -> add a at the end to make palindrome => abcba, similarly abbcc => abbccbba
 		// We solve this using KMP (Knuth Morris Pratt Algorithm)
 		// Similar to this -> https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
-		public static int AppendsNeededToMakePalindrome(string str)
+		public static int AppendsNeededAtEndToMakePalindrome(string str)
 		{
 			var reverse = new string(str.Reverse().ToArray());
 			// We can do as done in https://www.geeksforgeeks.org/minimum-characters-added-front-make-string-palindrome/
@@ -194,6 +197,7 @@ namespace CSharpProblemSolving.Strings
 			//		0 0 0 0 0 0 0
 			//	a	0 1 1 1 1 1 1
 			//	c   0 1 1 2 2 2 2
+
 			//	b   0 1 2 2 2 2 2
 			//	c   0 1 2 3 3 3 3
 			//	f   0 1 2 3 3 3 4

@@ -58,7 +58,7 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			PeakElement.Samples();
+			Digitswith1And2.Samples();
 		}
 	}
 }
