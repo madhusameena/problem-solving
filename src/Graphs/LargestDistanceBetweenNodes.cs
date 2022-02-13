@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace CSharpProblemSolving.Graphs
 {
 	// https://www.interviewbit.com/problems/largest-distance-between-nodes-of-a-tree/
-	// https://leetcode.com/problems/diameter-of-binary-tree/description/
 	// https://www.youtube.com/watch?v=x5ZH4pnts7Q&t=31s
 	public class LargestDistanceBetweenNodes
 	{

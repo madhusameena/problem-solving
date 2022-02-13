@@ -8,8 +8,15 @@ namespace CSharpProblemSolving.DP
 {
 	// https://leetcode.com/problems/unique-paths/
 	// https://www.interviewbit.com/problems/grid-unique-paths/
-	public class GrodUniquePaths
+	public class GridUniquePaths
 	{
+		public static void Samples()
+		{
+			var obj = new GridUniquePaths();
+			Console.WriteLine(obj.UniquePathsOptimised(3, 7));
+			Console.WriteLine(obj.UniquePaths(3, 7));
+			//Console.WriteLine(obj.UniquePathsOptimised(3, 2));
+		}
 		public int UniquePaths(int m, int n)
 		{
 			var dpArray = new int[m, n];
@@ -32,6 +39,36 @@ namespace CSharpProblemSolving.DP
 				}
 			}
 			return dpArray[m - 1, n - 1];
+		}
+		public int UniquePathsOptimised(int m, int n)
+		{
+			var prev = new int[n];
+			for (int i = 0; i < m; i++)
+			{
+				var curr = new int[n];
+				for (int j = 0; j < n; j++)
+				{
+					if (i == 0 && j == 0)
+					{
+						curr[i] = 1;
+					}
+					else
+					{
+						int top = 0, left = 0;
+						if (i > 0)
+						{
+							top = prev[j];
+						}
+						if (j > 0)
+						{
+							left = curr[j - 1];
+						}
+						curr[j] = top + left;
+					}
+				}
+				prev = curr;
+			}
+			return prev[n - 1];
 		}
 	}
 }
