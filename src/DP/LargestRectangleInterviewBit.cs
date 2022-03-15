@@ -82,6 +82,7 @@ namespace CSharpProblemSolving.DP
 			for (var i = A.Count - 1; i >= 0; i--)
 			{
 				// Pop elements till we find element which is less then the actual one, if we remove 1 we will get right max val for the current element
+				// Keep stack in increasing order
 				while (stack.Count > 0 && A[stack.Peek()] >= A[i])
 				{
 					stack.Pop();

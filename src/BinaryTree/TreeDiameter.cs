@@ -21,22 +21,22 @@ namespace CSharpProblemSolving.BinaryTree
 		public int DiameterOfBinaryTree(TreeNode root)
 		{
 			int dia = 0;
-			GetDia(root, ref dia);
+			GetHeight(root, ref dia);
 			return dia;
 		}
-		private int GetDia(TreeNode root, ref int dia)
+		private int GetHeight(TreeNode root, ref int dia)
 		{
 			if (root == null)
 			{
 				return 0;
 			}
-			int leftDia = GetDia(root.left, ref dia);
-			int rightDia = GetDia(root.right, ref dia);
+			int leftHeight = GetHeight(root.left, ref dia);
+			int rightHeight = GetHeight(root.right, ref dia);
 
-			dia = Math.Max(leftDia + rightDia, dia);
+			dia = Math.Max(leftHeight + rightHeight, dia);
 
 
-			return Math.Max(leftDia, rightDia) + 1;
+			return Math.Max(leftHeight, rightHeight) + 1;
 
 		}
 	}
