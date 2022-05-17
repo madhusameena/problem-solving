@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpProblemSolving.Arrays
 {
@@ -23,6 +24,7 @@ namespace CSharpProblemSolving.Arrays
 			}
 			
 			return maxProfit;
+			
 		}
 	}
 }

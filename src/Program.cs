@@ -101,7 +101,8 @@ namespace CSharpProblemSolving
 
 		static void Main(string[] args)
 		{
-			DiffIndata.Samples();
+			//DiffIndata.Samples();
+			ReverseLevelOrder.solve();
 			//Console.WriteLine(solution(new string[] { "GB4032", "GB134", "PL123424" },
 			//new int[] {2, 2, 5 } ));
 
