@@ -27,7 +27,7 @@ namespace CSharpProblemSolving.Arrays
 					}
 				}
 				m = nums.Length - n;
-				sum += (n * m);// count num of bits
+				sum += (n * m); // count num of bits
 			}
 			return sum;
 		}

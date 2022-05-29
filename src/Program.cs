@@ -9,7 +9,6 @@ using CSharpProblemSolving.Adventofcode_Dec_20;
 using CSharpProblemSolving.Algorithms.Recursive;
 using CSharpProblemSolving.Arrays;
 using CSharpProblemSolving.Backtrack;
-using CSharpProblemSolving.BinarySearch;
 using CSharpProblemSolving.BinaryTree;
 using CSharpProblemSolving.Bits;
 using CSharpProblemSolving.BST;

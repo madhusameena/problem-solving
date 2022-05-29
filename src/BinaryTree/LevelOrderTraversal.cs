@@ -100,6 +100,7 @@ namespace CSharpProblemSolving.BinaryTree
 			TraverseUsingQueue(node);
 		}
 
+		// BFT/ BST using each row
 		public static void PrintCurrentLevel(Node node, int level)
 		{
 			if (node == null)
@@ -141,6 +142,7 @@ namespace CSharpProblemSolving.BinaryTree
 			return Math.Max(leftHeight, rightHeight) + 1;
 		}
 
+		// BFT/ BST using queue
 		public static void TraverseUsingQueue(Node node)
 		{
 			if (node == null)

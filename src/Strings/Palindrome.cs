@@ -197,7 +197,6 @@ namespace CSharpProblemSolving.Strings
 			//		0 0 0 0 0 0 0
 			//	a	0 1 1 1 1 1 1
 			//	c   0 1 1 2 2 2 2
-
 			//	b   0 1 2 2 2 2 2
 			//	c   0 1 2 3 3 3 3
 			//	f   0 1 2 3 3 3 4
