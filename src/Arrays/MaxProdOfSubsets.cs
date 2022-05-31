@@ -13,11 +13,11 @@ namespace CSharpProblemSolving.Arrays
 		public static long Solve(int[] array)
 		{
 			// 321 ->
-			// 3, 3 2, 3 2 1, 3 1 -> 2 ^ 2 
+			// 3, 3 2, 3 2 1, 3 1 -> 2 ^ 2 times 3
 			// 
-			// 2, 2 1 -> 2 ^ 1
+			// 2, 2 1 -> 2 ^ 1 times 2
 			// 
-			// 1 -> 2 ^ 0
+			// 1 -> 2 ^ 0 times 1
 			long mod = 1000000007;
 			Array.Sort(array);
 			long result = 1;

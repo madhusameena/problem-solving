@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Text;
-using CSharpProblemSolving.Adventofcode_Dec_20;
 using CSharpProblemSolving.Algorithms.Recursive;
 using CSharpProblemSolving.Arrays;
 using CSharpProblemSolving.Backtrack;
@@ -101,7 +100,7 @@ namespace CSharpProblemSolving
 		static void Main(string[] args)
 		{
 			//DiffIndata.Samples();
-			ReverseLevelOrder.solve();
+			GetTotalNumbers.Solve();
 			//Console.WriteLine(solution(new string[] { "GB4032", "GB134", "PL123424" },
 			//new int[] {2, 2, 5 } ));
 

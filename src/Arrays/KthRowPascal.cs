@@ -38,7 +38,7 @@ namespace CSharpProblemSolving.Arrays
 			{
 				return 1;
 			}
-			if (i < n - i)
+			if (i > n - i)
 			{
 				i = n - i;
 			}

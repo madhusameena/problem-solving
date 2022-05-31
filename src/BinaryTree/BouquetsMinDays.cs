@@ -61,21 +61,17 @@ namespace CSharpProblemSolving.BinaryTree
 				{
 					// Flower can bloom
 					consecutiveBouquetCount++;
+					if (consecutiveBouquetCount >= k)
+					{
+						numOfBouquetsTotal++;
+						consecutiveBouquetCount = 0;
+					}
 				}
 				else
 				{
-					if (consecutiveBouquetCount >= k)
-					{
-						numOfBouquetsTotal ++;
-					}
-
 					consecutiveBouquetCount = 0;
 				}
-				if (consecutiveBouquetCount >= k)
-				{
-					numOfBouquetsTotal ++;
-					consecutiveBouquetCount = 0;
-				}
+				
 
 				if (numOfBouquetsTotal >= m)
 				{

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace CSharpProblemSolving.Arrays
 {
 	// min num of swaps required to move all 1s and 0s one side (any side)
+	// https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/
 	internal class DiffIndata
 	{
 		public static void Samples()
@@ -15,21 +16,8 @@ namespace CSharpProblemSolving.Arrays
 		}
 		public static int Solve(List<int> nums)
 		{
-			var ascData = nums.OrderBy(s => s).ToList();
-			var descData = nums.OrderByDescending(s => s).ToList();
-			int ascCount = 0, descCount = 0;
-			for (int i = 0; i < nums.Count; i++)
-			{
-				if (nums[i] != ascData[i])
-				{
-					ascCount++;
-				}
-				if (nums[i] != descData[i])
-				{
-					descCount++;
-				}
-			}
-			return Math.Min(ascCount, descCount);
+			// TODO Do it
+			return -1;
 		}
 	}
 }

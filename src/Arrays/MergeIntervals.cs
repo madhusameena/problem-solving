@@ -52,5 +52,25 @@ namespace CSharpProblemSolving.Arrays
 			result.Add(prev);
 			return result.ToArray();
 		}
+		// https://leetcode.com/problems/amount-of-new-area-painted-each-day/
+		public int[] Paint(int[][] intervals)
+		{
+			var result = new List<int>();
+			//Array.Sort(intervals, (a, b) =>
+			//{
+			//	if (a[0] != b[0])
+			//	{
+			//		return a[0].CompareTo(b[0]);
+			//	}
+			//	return a[1].CompareTo(b[1]);
+			//});
+			var prev = intervals[0];
+            for (int i = 1; i < intervals.Length; i++)
+            {
+				var current = intervals[i];
+            }
+			// TODO
+			return null;
+		}
 	}
 }
