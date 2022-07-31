@@ -253,6 +253,7 @@ namespace CSharpProblemSolving.Strings
 				strArray[newIdx++] = '|';
 			}
 
+
 			var palindromeArray = new int[strArray.Length];
 			int center = 0, rightBorder = 0;
 			for (var idx = 1; idx < strArray.Length - 1; idx++)

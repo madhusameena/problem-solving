@@ -13,7 +13,7 @@ namespace CSharpProblemSolving
             var test = Regex.Match(input, pattern);
             Console.WriteLine($"test.Groups.Count = {test.Groups.Count}");
 
-            foreach (Group testGroup in test.Groups)
+            foreach (System.Text.RegularExpressions.Group testGroup in test.Groups)
             {
                 Console.WriteLine($"testGroup.Value = {testGroup.Value}");
             }
@@ -23,7 +23,7 @@ namespace CSharpProblemSolving
             {
                 Console.WriteLine($"\tmatch.Groups.Count = {match.Groups.Count}");
                 Console.WriteLine($"\tmatch.Value = {match.Value}");
-                foreach (Group matchGroup in match.Groups)
+                foreach (System.Text.RegularExpressions.Group matchGroup in match.Groups)
                 {
                     Console.WriteLine($"\t\tmatchGroup.Value = {matchGroup.Value}");
                     Console.WriteLine($"\t\tmatchGroup.Name = {matchGroup.Name}");

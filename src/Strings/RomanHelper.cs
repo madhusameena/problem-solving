@@ -38,12 +38,9 @@ namespace CSharpProblemSolving.Strings
 			return result;
 		}
 
-		public static int RomanToInt(string romanNum)
+		// https://leetcode.com/problems/roman-to-integer/submissions/
+		public static int RomanToInt(string s)
 		{
-			if (string.IsNullOrEmpty(romanNum))
-			{
-				return 0;
-			}
 			Dictionary<char, int> dictValues = new Dictionary<char, int>()
 			{
 				{'I', 1},
@@ -54,41 +51,18 @@ namespace CSharpProblemSolving.Strings
 				{'D', 500},
 				{'M', 1000},
 			};
-			if (romanNum.Length == 0)
+			int sum = 0;
+			for (int i = 0; i < s.Length; i++)
 			{
-				return 0;
-			}
-			if (romanNum.Length == 1)
-			{
-				return dictValues[romanNum[0]];
-			}
-			
-			int num = 0;
-			int prev = dictValues[romanNum[0]];
-			for (var idx = 1; idx < romanNum.Length; idx++)
-			{
-				var current = dictValues[romanNum[idx]];
-				if (current > prev)
+				var val = dictValues[s[i]];
+				if (i < s.Length - 1 && val < dictValues[s[i + 1]])
 				{
-					num += (current - prev);
-					prev = 0;
-					idx++;
-					if (idx < romanNum.Length)
-					{
-						prev = dictValues[romanNum[idx]];
-					}
+					sum -= val;
 				}
 				else
-				{
-					num += prev;
-					prev = current;
-				}
-				if (idx == romanNum.Length - 1)
-				{
-					num += prev;
-				}
+					sum += val;
 			}
-			return num;
+			return sum;
 		}
 	}
 }

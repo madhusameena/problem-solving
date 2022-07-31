@@ -13,7 +13,7 @@ namespace CSharpProblemSolving.Arrays
 			nums = nums.OrderBy(s => s).ToList();
 			int sum = 0;
 			
-			for (var i = 0; i < nums.Count - 2; i++)
+			for (var i = 0; i < nums.Count - 1; i++)
 			{
 				int left = i + 1, right = nums.Count - 1;
 				while (left < right)
@@ -68,6 +68,8 @@ namespace CSharpProblemSolving.Arrays
 						{
 							result.Add(tuple);
 							list.Add(new List<int>() { A[i], A[left], A[right] });
+							left++;
+							right--;
 						}
 					}
 					else if (sum < 0)

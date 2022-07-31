@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.Tracing;
+﻿using System;
+using System.Diagnostics.Tracing;
+using System.Linq;
 
 namespace CSharpProblemSolving.LinkedList
 {

@@ -96,11 +96,30 @@ namespace CSharpProblemSolving
 
 			return sum;
 		}
+        private class CustomComparer : IComparer<int>
+        {
+            public int Compare(int x, int y)
+            {
+                return y.CompareTo(x);
+            }
+        }
+        static void PriorityQueueSample()
+		{
+			var pq = new PriorityQueue<int, int>();
+			pq.Enqueue(0, 0);
+			pq.Enqueue(6, -6);
+			pq.Enqueue(2, -2);
+			pq.Enqueue(1, -1);
+            for (int i = 0; i < 3; i++)
+            {
+				var queue = pq.Dequeue();
+                Console.WriteLine(queue);
+			}
+		}
 
 		static void Main(string[] args)
 		{
-			//DiffIndata.Samples();
-			GetTotalNumbers.Solve();
+			SegmentTreeSample.Samples();
 			//Console.WriteLine(solution(new string[] { "GB4032", "GB134", "PL123424" },
 			//new int[] {2, 2, 5 } ));
 
