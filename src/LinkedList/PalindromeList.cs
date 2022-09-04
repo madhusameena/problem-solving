@@ -3,6 +3,7 @@
 namespace CSharpProblemSolving.LinkedList
 {
 	// https://www.interviewbit.com/problems/palindrome-list/
+	// https://leetcode.com/problems/palindrome-linked-list/
 	public static class PalindromeList
 	{
 		public static void Samples()

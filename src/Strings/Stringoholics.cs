@@ -108,7 +108,7 @@ public class Solution {
         }
         private int GetMaxSubstringLength(string str)
         {
-            return calculateLPS(str).Max();
+            return CalculateLPS(str).Max();
         }
 
         public int strStr(string A, string B)
@@ -122,7 +122,7 @@ public class Solution {
         private List<int> KMP(string txt, string pattern)
         {
             var result = new List<int>();
-            var lps = calculateLPS(pattern);
+            var lps = CalculateLPS(pattern);
             var i = 0;
             var j = 0;
             while(i < txt.Length)
@@ -159,7 +159,7 @@ public class Solution {
             return result;
         }
         
-        private int[] calculateLPS(string pattern)
+        private int[] CalculateLPS(string pattern)
         {
             var result = new int[pattern.Length];
             var i = 1;
@@ -176,7 +176,7 @@ public class Solution {
                 }
                 else
                 {
-                    if(cnt!=0)
+                    if(cnt != 0)
                     {
                         cnt = result[cnt - 1];
                     }

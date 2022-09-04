@@ -17,6 +17,7 @@ using CSharpProblemSolving.Graphs;
 using CSharpProblemSolving.Greedy;
 using CSharpProblemSolving.Hashing;
 using CSharpProblemSolving.LinkedList;
+using CSharpProblemSolving.MathProb;
 using CSharpProblemSolving.PrefixSum;
 using CSharpProblemSolving.QueueOperations;
 using CSharpProblemSolving.StackOperations;
@@ -113,20 +114,38 @@ namespace CSharpProblemSolving
             for (int i = 0; i < 3; i++)
             {
 				var queue = pq.Dequeue();
-                Console.WriteLine(queue);
+
+				Console.WriteLine(queue);
 			}
 		}
 
 		static void Main(string[] args)
-		{
-			SegmentTreeSample.Samples();
+        {
+			Decode_String.Samples();
 			//Console.WriteLine(solution(new string[] { "GB4032", "GB134", "PL123424" },
 			//new int[] {2, 2, 5 } ));
 
 			//Console.WriteLine(solution(new string[] { "FR123456", "US987654" },
 			//new int[] { 11, 11 }));
 		}
-		public static string solution(string[] A, int[] B)
+
+        private static void PQSamples()
+        {
+            // PQ is Min heap in C#
+            var pq = new PriorityQueue<int, int>();
+            var pq1 = new PriorityQueue<int, int>();
+            for (int i = 0; i < 5; i++)
+            {
+                pq.Enqueue(i, i);
+                pq1.Enqueue(i, -i);
+            }
+            while (pq.Count > 0)
+            {
+                Console.WriteLine($"{pq.Dequeue()} -> {pq1.Dequeue()}");
+            }
+        }
+
+        public static string solution(string[] A, int[] B)
 		{
 			// write your code in C# 6.0 with .NET 4.5 (Mono)
 			var valueHash = new Dictionary<string, int>();
