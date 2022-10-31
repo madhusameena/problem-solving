@@ -17,7 +17,7 @@ namespace CSharpProblemSolving.Arrays
 			Array.Sort(arr);
 			Array.Sort(dep);
 			int platforms = 1; // start with starting element
-			int resultPlatforms = platforms; // While reducing the platforms - dont go beyond result
+			int resultPlatforms = platforms; // While reducing the platforms - don't go beyond result
 			int arrIdx = 1, depIdx = 0;
 			while (arrIdx < arr.Length && depIdx < dep.Length)
 			{

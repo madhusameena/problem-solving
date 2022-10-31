@@ -9,11 +9,11 @@ namespace CSharpProblemSolving.Graphs
 	// https://leetcode.com/problems/clone-graph/
 	public class CloneGraphProblem
 	{
-		Dictionary<Node, bool> m_visited = new Dictionary<Node, bool>();
-		Dictionary<Node, Node> m_nodes = new Dictionary<Node, Node>();
+        HashSet<Node> m_visited = new HashSet<Node>();
+        Dictionary<Node, Node> m_nodes = new Dictionary<Node, Node>();
 
 
-		public static void Samples()
+        public static void Samples()
 		{
 			var obj = new CloneGraphProblem();
 			var node1 = new Node(1);
@@ -35,55 +35,47 @@ namespace CSharpProblemSolving.Graphs
 
 			var res = obj.CloneGraph(node1);
 		}
-		public Node CloneGraph(Node node)
-		{
-			if (node == null)
-			{
-				return null;
-			}
-			if (node.neighbors.Count == 0)
-			{
-				return new Node(node.val);
-			}
-			Node rootNode = new Node(-1);
-			InitiliseVisited(node);
-			rootNode.neighbors = new List<Node>() { m_nodes[node] };
-			dfs(rootNode.neighbors[0], node);
+        public Node CloneGraph(Node node)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+            if (node.neighbors.Count == 0)
+            {
+                return new Node(node.val);
+            }
+            Node rootNode = new Node(-1);
+            // InitiliseVisited(node);
+            m_nodes.Add(node, new Node(node.val));
+            rootNode.neighbors = new List<Node>() { m_nodes[node] };
+            dfs(rootNode.neighbors[0], node);
 
-			return rootNode.neighbors[0];
-		}
+            return rootNode.neighbors[0];
+        }
 
-		private void dfs(Node rootNode, Node node)
-		{
-			if (m_visited[node])
-			{
-				return;
-			}
-			m_visited[node] = true;
-			rootNode.neighbors = new List<Node>();
-			for (int idx = 0; idx < node.neighbors.Count; idx++)
-			{
-				Node child = node.neighbors[idx];
-				var newChild = m_nodes[child];
-				dfs(newChild, child);
-				rootNode.neighbors.Add(newChild);
-			}
-		}
-		private void InitiliseVisited(Node root)
-		{
-			if (!m_visited.ContainsKey(root))
-			{
-				m_visited.Add(root, false);
-				m_nodes.Add(root, new Node(root.val));
-			}
-
-			foreach (var neighbor in root.neighbors)
-			{
-				if (!m_visited.ContainsKey(neighbor))
-				{
-					InitiliseVisited(neighbor);
-				}
-			}
-		}
-	}
+        private void dfs(Node rootNode, Node node)
+        {
+            if (m_visited.Contains(node))
+            {
+                return;
+            }
+            m_visited.Add(node);
+            rootNode.neighbors = new List<Node>();
+            for (int idx = 0; idx < node.neighbors.Count; idx++)
+            {
+                Node child = node.neighbors[idx];
+                Node newChild;
+                if (!m_nodes.ContainsKey(child))
+                {
+                    newChild = new Node(child.val);
+                    m_nodes.Add(child, newChild);
+                }
+                else
+                    newChild = m_nodes[child];
+                dfs(newChild, child);
+                rootNode.neighbors.Add(newChild);
+            }
+        }
+    }
 }

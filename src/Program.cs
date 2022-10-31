@@ -107,21 +107,34 @@ namespace CSharpProblemSolving
         static void PriorityQueueSample()
 		{
 			var pq = new PriorityQueue<int, int>();
+			
+			// Descending
 			pq.Enqueue(0, 0);
 			pq.Enqueue(6, -6);
 			pq.Enqueue(2, -2);
 			pq.Enqueue(1, -1);
-            for (int i = 0; i < 3; i++)
-            {
-				var queue = pq.Dequeue();
 
-				Console.WriteLine(queue);
-			}
-		}
+			Console.WriteLine("--------DESC--------");
+            while (pq.Count > 0)
+			{
+                Console.WriteLine(pq.Dequeue());
+            }
+			Console.WriteLine("--------ASC--------");
+            // Ascending
+            pq.Enqueue(0, 0);
+            pq.Enqueue(6, 6);
+            pq.Enqueue(2, 2);
+            pq.Enqueue(1, 1);
+            while (pq.Count > 0)
+            {
+                Console.WriteLine(pq.Dequeue());
+            }
+        }
 
 		static void Main(string[] args)
         {
-			Decode_String.Samples();
+			PriorityQueueSample();
+            // Consecutive_Binary_Numbers.Samples();
 			//Console.WriteLine(solution(new string[] { "GB4032", "GB134", "PL123424" },
 			//new int[] {2, 2, 5 } ));
 

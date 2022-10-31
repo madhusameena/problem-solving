@@ -5,7 +5,7 @@ using System.Text;
 namespace CSharpProblemSolving.StackOperations
 {
 	// https://www.interviewbit.com/problems/reverse-string/
-	public static class ReverseStringStack
+	public class ReverseStringStack
 	{
 		public static void Samples()
 		{
@@ -36,5 +36,33 @@ namespace CSharpProblemSolving.StackOperations
 
 			return sb.ToString();
 		}
-	}
+        // https://leetcode.com/problems/reverse-words-in-a-string-iii
+        public string ReverseWords(string s)
+        {
+            var stack = new Stack<char>();
+            var sb = new StringBuilder();
+            foreach (var ch in s)
+            {
+                if (ch != ' ')
+                    stack.Push(ch);
+                else if (stack.Count > 0)
+                {
+                    while (stack.Count > 0)
+                    {
+                        sb.Append(stack.Pop());
+                    }
+                    sb.Append(ch);
+                }
+                else
+                {
+                    sb.Append(ch);
+                }
+            }
+            while (stack.Count > 0)
+            {
+                sb.Append(stack.Pop());
+            }
+            return sb.ToString();
+        }
+    }
 }

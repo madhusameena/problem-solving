@@ -35,7 +35,6 @@ namespace CSharpProblemSolving.BinaryTree
 
 			dia = Math.Max(leftHeight + rightHeight, dia);
 
-
 			return Math.Max(leftHeight, rightHeight) + 1;
 
 		}

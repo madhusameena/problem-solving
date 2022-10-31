@@ -71,5 +71,27 @@ namespace CSharpProblemSolving.BinaryTree
 			DepthFirstSearchPreOrder(node.left, leftTempPath, targetSum);
 			DepthFirstSearchPreOrder(node.right, rightTempPath, targetSum);
 		}
-	}
+        public IList<IList<int>> PathSumNew(TreeNode root, int targetSum)
+        {
+            var ans = new List<IList<int>>();
+            var list = new List<int>();
+            PathSumNew(root, targetSum, list, ans);
+            return ans;
+        }
+        void PathSumNew(TreeNode node, int target, List<int> list, List<IList<int>> ans)
+        {
+            if (node == null)
+                return;
+            list.Add(node.val);
+            if (node.left == null && node.right == null && target == node.val)
+            {
+                ans.Add(new List<int>(list));
+                list.RemoveAt(list.Count - 1);
+                return;
+            }
+            PathSumNew(node.left, target - node.val, list, ans);
+            PathSumNew(node.right, target - node.val, list, ans);
+            list.RemoveAt(list.Count - 1);
+        }
+    }
 }

@@ -12,9 +12,10 @@ namespace CSharpProblemSolving.DP
         public static void Samples()
         {
             var obj = new PartitionEqualSubsetSum();
-			Console.WriteLine(obj.CanPartition(new int[] { 1, 2, 5 })); // False
-			Console.WriteLine(obj.CanPartition(new int[] { 14, 9, 8, 4, 3, 2 })); // True
-			Console.WriteLine(obj.CanPartition(new int[] { 2, 2, 3, 5 })); // False
+            //Console.WriteLine(obj.CanPartition(new int[] { 1, 2, 5 })); // False
+            //Console.WriteLine(obj.CanPartition(new int[] { 14, 9, 8, 4, 3, 2 })); // True
+            //Console.WriteLine(obj.CanPartition(new int[] { 2, 2, 3, 5 })); // False
+            Console.WriteLine(obj.SubarraySum(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 1 }, 0));
         }
         public bool CanPartition(int[] nums)
         {
@@ -29,7 +30,32 @@ namespace CSharpProblemSolving.DP
 			Console.WriteLine($"From Dp: {test}");
             return test;
         }
-        private bool SubarraySum(int[] nums, int k)
+        public int SubarraySum(int[] nums, int k)
+        {
+            Dictionary<int, int> preSumDict = new Dictionary<int, int>();
+            int sum = 0, count = 0;
+            preSumDict.Add(0, 1); // 0 sum one time - to detect if first val is k
+            for (int i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i];
+                var leftSum = sum - k;
+                if (preSumDict.ContainsKey(leftSum))
+                {
+                    count += preSumDict[leftSum];
+                }
+                if (preSumDict.ContainsKey(sum))
+                {
+                    preSumDict[sum]++;
+                }
+                else
+                {
+                    preSumDict.Add(sum, 1);
+                }
+            }
+            return count;
+        }
+
+        private bool SubarraySumTakeNNoTake(int[] nums, int k)
         {
             int n = nums.Length;
             bool[] prev = new bool[k + 1], curr = new bool[k + 1]; // target goes from 0 to k

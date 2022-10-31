@@ -117,7 +117,6 @@ namespace CSharpProblemSolving.DP
         public static int SubarraySum(int[] nums, int k)
         {
             Dictionary<int, int> preSumDict = new Dictionary<int, int>();
-            var list = new List<string>();
             int sum = 0, count = 0;
             for (int i = 0; i < nums.Length; i++)
             {
